@@ -1,15 +1,15 @@
-# TinyGPT - A Lightweight GPT Implementation in tinygrad
+# MiniMiggy 🤖 - A Playful GPT Implementation in tinygrad
 
-A minimalist implementation of GPT (Generative Pre-trained Transformer) using tinygrad. This implementation includes efficient attention mechanisms, checkpointing, and text generation capabilities.
+MiniMiggy is a compact, efficient implementation of GPT (Generative Pre-trained Transformer) built with tinygrad. Despite its small size, MiniMiggy packs a punch with efficient attention mechanisms, robust checkpointing, and creative text generation capabilities.
 
 ## Features
 
-- 🚀 Lightweight GPT implementation using tinygrad
-- ⚡ Flash Attention for efficient attention computation
-- 💾 Checkpoint saving and loading functionality
-- 🔄 BPE Tokenization using tiktoken
-- 📝 Text generation capabilities
-- 📊 Training progress monitoring
+- 🚀 Minimalist GPT architecture powered by tinygrad
+- ⚡ Flash Attention for lightning-fast computation
+- 💾 Hassle-free checkpoint saving and loading
+- 🔄 Built-in BPE Tokenization using tiktoken
+- 📝 Creative text generation
+- 📊 Real-time training insights
 
 ## Requirements
 
@@ -22,10 +22,10 @@ tiktoken
 
 ## Installation
 
-1. Clone the repository:
+1. Clone MiniMiggy:
 ```bash
 git clone [your-repo-url]
-cd tinygpt
+cd minimiggy
 ```
 
 2. Install dependencies:
@@ -35,10 +35,10 @@ pip install tinygrad numpy requests tiktoken
 
 ## Usage
 
-### Training the Model
+### Training MiniMiggy
 
 ```python
-from gpt import GPT, GPTConfig, TrainConfig, BPETokenizer
+from minimiggy import GPT, GPTConfig, TrainConfig, BPETokenizer
 
 # Initialize configurations
 config = GPTConfig(
@@ -56,37 +56,38 @@ train_config = TrainConfig(
     eval_interval=100
 )
 
-# Create model and train
+# Create and train MiniMiggy
 model = GPT(config)
 train(model, train_config, train_data)
 ```
 
-### Generating Text
+### Generating Text with MiniMiggy
 
 ```python
 # Initialize tokenizer and model
 tokenizer = BPETokenizer()
 model = GPT(config)
 
-# Generate text
+# Let MiniMiggy create some text
 context = "ROMEO:"
 x = Tensor([tokenizer.encode(context)], dtype='int32')
 generated = model.generate(x, max_tokens=100)
 print(tokenizer.decode(generated.numpy().flatten().tolist()))
 ```
 
-### Saving and Loading Checkpoints
+### Saving and Loading MiniMiggy's Brain
 
 ```python
-# Save checkpoint
+# Save MiniMiggy's state
 model.save_checkpoint(iter_num, optimizer, "checkpoints")
 
-# Load checkpoint
+# Reload MiniMiggy
 model.load_checkpoint("checkpoints/ckpt_1000.safetensors", optimizer)
 ```
 
 ## Model Architecture
 
+MiniMiggy's brain consists of:
 - Multi-head self-attention with Flash Attention
 - Layer normalization
 - Feed-forward neural networks
@@ -121,29 +122,30 @@ TrainConfig(
 
 ## Implementation Details
 
-- Uses the Adam optimizer
-- Implements efficient Flash Attention
-- Includes gradient checking functionality
-- Supports both training and inference modes
-- Uses BPE tokenization from tiktoken
+MiniMiggy features:
+- Adam optimizer for learning
+- Efficient Flash Attention mechanism
+- Built-in gradient checking
+- Dual mode support (training/inference)
+- BPE tokenization powered by tiktoken
 
 ## Memory Management
 
-The implementation includes efficient memory management through:
-- Dynamic tensor allocation
-- Gradient cleanup after updates
-- Optional checkpoint loading/saving
+MiniMiggy is designed to be memory-efficient with:
+- Smart tensor allocation
+- Automatic gradient cleanup
+- Optional checkpointing system
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Want to make MiniMiggy even better? Contributions are welcome! Feel free to submit a Pull Request.
 
 ## License
 
-MIT 
+MIT
 
 ## Acknowledgments
 
+- Built using the fantastic tinygrad framework
+- Uses OpenAI's tiktoken for tokenization
 - Inspired by Andrej Karpathy's work on GPT
-- Built using the tinygrad framework
-- Uses the tiktoken tokenizer from OpenAI
