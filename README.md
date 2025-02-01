@@ -1,0 +1,2 @@
+# MiniMiggy
+Small Educational LLM
