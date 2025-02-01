@@ -24,7 +24,7 @@ tiktoken
 
 1. Clone MiniMiggy:
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/LottoLottoLotto/MiniMiggy
 cd minimiggy
 ```
 
