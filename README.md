@@ -65,12 +65,13 @@ def train_step(x, y):
 ```
 ### 3. Gradient Monitoring Strategy
 You cannot easily inspect gradients inside a JIT-compiled function because the tensors remain on the GPU/Accelerator to avoid synchronization costs.
-
+```
 To solve this, this repo uses a Hybrid Loop:
 
 Iter 0-99: Run train_step (JIT). Fast, no CPU sync.
 
 Iter 100: Run standard model(x, y). Slower, but allows us to call .realize() on param.grad to check for vanishing/exploding gradients.
+```
 
 ## 📊 Sample Output
 ```
